@@ -1,1 +1,2 @@
-from .task import TaskRestView
+from .task import TaskRestView, DoneTaskRestView, GetTaskRestView
+from .index import IndexView

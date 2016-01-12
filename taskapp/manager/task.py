@@ -9,3 +9,10 @@ class TaskManager(models.Manager):
 
         if task:
             task.delete()
+
+    def done(self, id):
+        task = self.filter(id=id).first()
+
+        if task:
+            task.done = True
+            task.save()

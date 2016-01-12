@@ -15,18 +15,41 @@ class TaskRestView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
     def get(self, request):
-
-        if id is None:
-
-            tasks = Task.objects.all()
-            tasks = TaskSerializer(tasks, many=True)
-            return JSONResponse(tasks.data)
+        tasks = Task.objects.all()
+        tasks = TaskSerializer(tasks, many=True)
+        return JSONResponse(tasks.data)
 
     def post(self, request):
-
-        task = TaskSerializer(data=request.data)
+        if 'id' in request.data and request.data['id'] is not None:
+            task = TaskSerializer(data=request.data, instance=Task.objects.get(pk=request.data['id']))
+        else:
+            task = TaskSerializer(data=request.data)
 
         if task.is_valid():
             task.save()
 
         return JSONResponse(task.data)
+
+
+class GetTaskRestView(APIView):
+
+    def get(self, request,id):
+
+        task = Task.objects.get(pk=int(id))
+
+        if task:
+
+            task = TaskSerializer(task)
+            print(task.data)
+            return JSONResponse(task.data)
+
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+class DoneTaskRestView(APIView):
+
+    def get(self, request,id):
+
+        Task.objects.done(id)
+
+        return Response(status=status.HTTP_204_NO_CONTENT)

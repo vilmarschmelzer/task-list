@@ -17,7 +17,14 @@ from django.conf.urls import url
 from taskapp.views import *
 
 urlpatterns = [
-    url(r'^task/(?P<id>\d+)/', TaskRestView.as_view(), name='task'),
-    url(r'^task/', TaskRestView.as_view(), name='task'),
+
+    url(r'^$', IndexView.as_view(), name='index'),
+
+    url(r'^task/(?P<id>\d+)/$', TaskRestView.as_view(), name='task'),
+    url(r'^task/$', TaskRestView.as_view(), name='task'),
+
+    url(r'^done-task/(?P<id>\d+)/$', DoneTaskRestView.as_view(), name='done-task'),
+
+    url(r'^get-task/(?P<id>\d+)/$', GetTaskRestView.as_view(), name='get-task'),
 
 ]
