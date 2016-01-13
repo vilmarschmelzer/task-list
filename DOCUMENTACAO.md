@@ -33,8 +33,7 @@ Aplicativo web de lista de tarefas
 
   Os logs são registrados no diretório raiz do projeto, com o nome 'task_list.log'
 
-
-###4. Testes
+###5. Testes
 
   * Campos da tarefa
   
