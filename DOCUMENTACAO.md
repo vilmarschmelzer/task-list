@@ -25,7 +25,9 @@ Aplicativo web de lista de tarefas
   ```python manager.py runserver```
 
 ###4. Testes
+
   * Campos da tarefa
+  
     id: identificador da tarefa
     task: descrição da tarefa
     done: 'true' para tarefa finalizada, 'false' para tarefa não finalizada 
