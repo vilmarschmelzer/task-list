@@ -50,10 +50,17 @@ Aplicativo web de lista de tarefas
   * Editar tarefa, para editar é necessário passar o id da tarefa
   
   ```curl -X POST -H "Content-Type: application/json" -d '{"id":50,"task": "descrição da tarefa", "done": false}' http://localhost:porta/task/```
+
+    Quando informado o id da tarefa não existente na base de dados, retornara o erro 404 com a mensagem 'Tarefa não encontrada para atualizar'
       
   * Listar tarefas
   
   ```curl -X GET http://localhost:porta/task/```
+  
+  * Buscar tarefa, ID = id da tarefa
+    
+    ```curl -X GET http://localhost:porta/get-task/ID/```
+    Caso o id informado não existir, retornara o erro 404 com a mensagem 'Tarefa não encontrada'
 
   * Finalizar tarefa, ID = id da tarefa
   
