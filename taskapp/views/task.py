@@ -13,10 +13,14 @@ class TaskRestView(APIView):
     logger = logging.getLogger(__name__)
 
     def delete(self, request, id=None):
-        Task.objects.delete(id)
 
-        self.logger.debug('Task removida com sucesso')
-        return Response('Tarefa removida com sucesso', status=status.HTTP_204_NO_CONTENT)
+        if Task.objects.delete(id):
+
+            self.logger.debug('Task removida com sucesso')
+            return Response('Tarefa removida com sucesso', status=status.HTTP_204_NO_CONTENT)
+
+        self.logger.debug('Task nº %s não encontrada para remover' % (id))
+        return Response('Tarefa não encontrada', status=status.HTTP_404_NOT_FOUND)
 
     def get(self, request):
         tasks = Task.objects.all()
@@ -80,6 +84,9 @@ class DoneTaskRestView(APIView):
     logger = logging.getLogger(__name__)
 
     def get(self, request,id):
-        Task.objects.done(id)
-        self.logger.debug('Task nº %s finalizada com sucesso' % (id))
-        return Response('Tarefa finalizada com sucesso', status=status.HTTP_204_NO_CONTENT)
+        if Task.objects.done(id):
+            self.logger.debug('Task nº %s finalizada com sucesso' % (id))
+            return Response('Tarefa finalizada com sucesso', status=status.HTTP_204_NO_CONTENT)
+
+        self.logger.debug('Task nº %s não encontrada para finalizar' % (id))
+        return Response('Tarefa não encontrada', status=status.HTTP_404_NOT_FOUND)

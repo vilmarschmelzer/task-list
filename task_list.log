@@ -1,0 +1,50 @@
+DEBUG 13/01/2016 10:11:04 utils 5860 140673426007808 (0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+DEBUG 13/01/2016 10:11:04 utils 5860 140673426007808 (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+DEBUG 13/01/2016 10:11:24 utils 5860 140673412847360 (0.000) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task"; args=()
+DEBUG 13/01/2016 10:11:35 utils 5860 140673412847360 (0.000) BEGIN; args=None
+DEBUG 13/01/2016 10:11:35 utils 5860 140673412847360 (0.001) INSERT INTO "taskapp_task" ("task", "done") VALUES ('Nova task', 0); args=['Nova task', False]
+DEBUG 13/01/2016 10:11:36 utils 5860 140673412847360 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task"; args=()
+DEBUG 13/01/2016 10:11:42 utils 5860 140673412847360 (0.000) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 23 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(23,)
+DEBUG 13/01/2016 10:11:45 utils 5860 140673412847360 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 23 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(23,)
+DEBUG 13/01/2016 10:11:45 utils 5860 140673412847360 (0.000) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 23; args=(23,)
+DEBUG 13/01/2016 10:11:45 utils 5860 140673412847360 (0.000) BEGIN; args=None
+DEBUG 13/01/2016 10:11:45 utils 5860 140673412847360 (0.000) UPDATE "taskapp_task" SET "task" = 'DG j CD cbv', "done" = 0 WHERE "taskapp_task"."id" = 23; args=('DG j CD cbv', False, 23)
+DEBUG 13/01/2016 10:11:45 utils 5860 140673412847360 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task"; args=()
+DEBUG 13/01/2016 10:11:49 utils 5860 140673412847360 (0.005) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 27 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(27,)
+DEBUG 13/01/2016 10:11:49 utils 5860 140673412847360 (0.000) BEGIN; args=None
+DEBUG 13/01/2016 10:11:49 utils 5860 140673412847360 (0.000) UPDATE "taskapp_task" SET "task" = 'Nova task', "done" = 1 WHERE "taskapp_task"."id" = 27; args=('Nova task', True, 27)
+DEBUG 13/01/2016 10:11:50 utils 5860 140673332279040 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task"; args=()
+DEBUG 13/01/2016 10:11:52 utils 5860 140673332279040 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 26 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(26,)
+DEBUG 13/01/2016 10:11:52 utils 5860 140673332279040 (0.000) BEGIN; args=None
+DEBUG 13/01/2016 10:11:52 utils 5860 140673332279040 (0.000) DELETE FROM "taskapp_task" WHERE "taskapp_task"."id" IN (26); args=(26,)
+DEBUG 13/01/2016 10:11:52 utils 5860 140673412847360 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task"; args=()
+DEBUG 13/01/2016 11:12:15 utils 6694 140165779355392 (0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+DEBUG 13/01/2016 11:12:15 utils 6694 140165779355392 (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+DEBUG 13/01/2016 11:12:18 utils 6694 140165766457088 (0.000) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task"; args=()
+DEBUG 13/01/2016 11:19:51 utils 6694 140165766457088 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 20 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(20,)
+DEBUG 13/01/2016 11:20:01 utils 6694 140165766457088 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 100 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(100,)
+DEBUG 13/01/2016 11:40:34 utils 6694 140165766457088 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 60 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(60,)
+WARNING 13/01/2016 11:42:09 base 6694 140165766457088 Not Found: /task-done/50/
+DEBUG 13/01/2016 11:42:32 utils 6694 140165766457088 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 50 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(50,)
+DEBUG 13/01/2016 11:43:02 utils 6694 140165766457088 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 50 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(50,)
+DEBUG 13/01/2016 11:43:16 utils 6694 140165766457088 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 80 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(80,)
+DEBUG 13/01/2016 11:43:56 utils 6694 140165766457088 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 80 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(80,)
+DEBUG 13/01/2016 11:45:35 utils 6694 140165766457088 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 80 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(80,)
+DEBUG 13/01/2016 11:50:50 utils 7287 139888350136064 (0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+DEBUG 13/01/2016 11:50:50 utils 7287 139888350136064 (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+DEBUG 13/01/2016 11:56:08 utils 7417 140711485155072 (0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+DEBUG 13/01/2016 11:56:08 utils 7417 140711485155072 (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+DEBUG 13/01/2016 11:56:13 utils 7417 140711471994624 (0.000) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 80 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(80,)
+DEBUG 13/01/2016 11:56:23 utils 7417 140711471994624 (0.001) SELECT "taskapp_task"."id", "taskapp_task"."task", "taskapp_task"."done" FROM "taskapp_task" WHERE "taskapp_task"."id" = 80 ORDER BY "taskapp_task"."id" ASC LIMIT 1; args=(80,)
