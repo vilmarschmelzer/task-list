@@ -45,7 +45,7 @@ Aplicativo web de lista de tarefas
       
   * Inserir nova tarefa
   
-  ```curl -X POST -H "Content-Type: application/json" -d '{"task": "descrição da tarefa", "done": false}' http://localhost/task/```
+  ```curl -X POST -H "Content-Type: application/json" -d '{"task": "descrição da tarefa", "done": false}' http://localhost:porta/task/```
         
   * Editar tarefa, para editar é necessário passar o id da tarefa
   
