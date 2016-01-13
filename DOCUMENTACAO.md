@@ -42,10 +42,10 @@ Aplicativo web de lista de tarefas
   
   ```curl -X GET http://localhost:porta/task/```
 
-  * Finalizar tarefa
+  * Finalizar tarefa ID = id da tarefa
   
-  ```curl -X DELETE http://localhost:porta/task/id da task/```
-      
-  * Excluir tarefa
-      
+  ```curl -X GET http://localhost/done-task/ID/```
   
+  * Excluir tarefa ID = id da tarefa
+
+  ```curl -X DELETE http://localhost:porta/task/ID/```
