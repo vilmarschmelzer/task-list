@@ -66,7 +66,11 @@ Aplicativo web de lista de tarefas
   * Finalizar tarefa, ID = id da tarefa
   
   ```curl -X GET http://localhost:porta/done-task/ID/```
+
+    Caso o id informado não existir, retornara o erro 404 com a mensagem 'Tarefa não encontrada'
   
   * Excluir tarefa, ID = id da tarefa
 
   ```curl -X DELETE http://localhost:porta/task/ID/```
+  
+    Caso o id informado não existir, retornara o erro 404 com a mensagem 'Tarefa não encontrada'
