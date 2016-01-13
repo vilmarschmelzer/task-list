@@ -29,7 +29,9 @@ Aplicativo web de lista de tarefas
   * Campos da tarefa
   
     id: identificador da tarefa
+
     task: descrição da tarefa
+    
     done: 'true' para tarefa finalizada, 'false' para tarefa não finalizada 
       
   * Inserir nova tarefa
