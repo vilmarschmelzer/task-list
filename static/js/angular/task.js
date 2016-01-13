@@ -12,7 +12,7 @@ requestapp.config(function($httpProvider) {
 
 requestapp.controller('Task', function Task($scope, $log, $http){
 
-    $scope.task=null;
+    $scope.task = null;
     $scope.load_tasks = function(){
 
         $http.get('/task/')
@@ -29,7 +29,6 @@ requestapp.controller('Task', function Task($scope, $log, $http){
         $http.delete('/task/'+task_id+'/')
         .success(function (data, status, headers, config) {
             $scope.load_tasks();
-            alert('Tarefa removida com sucesso!');
         })
         .error(function (data, status, header, config) {
 
@@ -49,7 +48,6 @@ requestapp.controller('Task', function Task($scope, $log, $http){
         $http.get('/done-task/'+task_id+'/')
         .success(function (data, status, headers, config) {
             $scope.load_tasks();
-            alert('Tarefa finalizada com sucesso!');
         })
         .error(function (data, status, header, config) {
 
@@ -66,7 +64,7 @@ requestapp.controller('Task', function Task($scope, $log, $http){
 
         })
         .error(function (data, status, header, config) {
-
+            $scope.load_tasks();
         });
     }
 
@@ -102,6 +100,4 @@ requestapp.controller('Task', function Task($scope, $log, $http){
 
         });
     }
-
-
 });

@@ -35,12 +35,10 @@ class GetTaskRestView(APIView):
 
     def get(self, request,id):
 
-        task = Task.objects.get(pk=int(id))
+        task = Task.objects.filter(id=int(id)).first()
 
         if task:
-
             task = TaskSerializer(task)
-            print(task.data)
             return JSONResponse(task.data)
 
         return Response(status=status.HTTP_404_NOT_FOUND)
