@@ -24,9 +24,15 @@ Aplicativo web de lista de tarefas
   ```pip3 install -r requirements.txt```
 
 ###3. Execução
+
   Vá ao diretorio onde foi clonado o projeto e execute o comando
   
   ```python manager.py runserver```
+
+###4. Logs
+
+  Os logs são registrados no diretório raiz do projeto, com o nome 'task_list.log'
+
 
 ###4. Testes
 
@@ -52,7 +58,7 @@ Aplicativo web de lista de tarefas
 
   * Finalizar tarefa, ID = id da tarefa
   
-  ```curl -X GET http://localhost/done-task/ID/```
+  ```curl -X GET http://localhost:porta/done-task/ID/```
   
   * Excluir tarefa, ID = id da tarefa
 
