@@ -1,7 +1,7 @@
 # task-list
 Aplicativo web de lista de tarefas
 
-1. Este projeto será desenvolvido utilizando:
+###1. Este projeto será desenvolvido utilizando:
 
 * Python 3
 * Django 1.9
@@ -9,7 +9,7 @@ Aplicativo web de lista de tarefas
 * AngularJS
 * Bootstrap 3
 
-2. Instalação (Utilizando virtualenv)
+###2. Instalação (Utilizando virtualenv)
 
   Criar virtualenv
   
@@ -19,7 +19,7 @@ Aplicativo web de lista de tarefas
   
   ```pip3 install -r requirements.txt```
 
-3. Execução
+###3. Execução
   Vá ao diretorio onde foi clonado o projeto e execute o comando
   
   ```python manager.py runserver```
