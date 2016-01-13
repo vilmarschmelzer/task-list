@@ -5,6 +5,7 @@ Aplicativo web de lista de tarefas
 
 * Python 3
 * Django 1.9
+* REST
 * Sqlite
 * AngularJS
 * Bootstrap 3
