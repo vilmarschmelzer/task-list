@@ -25,21 +25,27 @@ Aplicativo web de lista de tarefas
   ```python manager.py runserver```
 
 ###4. Testes
-      Cmapos da tarefa
-        id: identificador da tarefa
-        task: descrição da tarefa
-        done: 'true' para tarefa finalizada, 'false' para tarefa não finalizada 
+  * Campos da tarefa
+    id: identificador da tarefa
+    task: descrição da tarefa
+    done: 'true' para tarefa finalizada, 'false' para tarefa não finalizada 
       
-      * Cadastrar nova
-        ```curl -X POST -H "Content-Type: application/json" -d '{"task": "descrição da tarefa", "done": false}' http://localhost/task/```
+  * Cadastrar nova tarefa
+  
+  ```curl -X POST -H "Content-Type: application/json" -d '{"task": "descrição da tarefa", "done": false}' http://localhost/task/```
         
-      * Editar tarefa, para editar é necessario passar o id da tarefa
-        ```curl -X POST -H "Content-Type: application/json" -d '{"id":50,"task": "descrição da tarefa", "done": false}' http://localhost/task/```
+  * Editar tarefa, para editar é necessario passar o id da tarefa
+  
+  ```curl -X POST -H "Content-Type: application/json" -d '{"id":50,"task": "descrição da tarefa", "done": false}' http://localhost:porta/task/```
       
-      * Listar tarefas
+  * Listar tarefas
+  
+  ```curl -X GET http://localhost:porta/task/```
+
+  * Finalizar tarefa
+  
+  ```curl -X DELETE http://localhost:porta/task/id da task/```
       
-      * Finalizar tarefa
-      
-      * Excluir tarefa
+  * Excluir tarefa
       
   
