@@ -9,13 +9,17 @@ Aplicativo web de lista de tarefas
 * AngularJS
 * Bootstrap 3
 
-###2. Instalação (Utilizando virtualenv)
+###2. Instalação (utilizando virtualenv)
 
-  Criar virtualenv
+  Criar virtualenv para Python 3
   
   ```virtualenv nome_virtualenv -p python3```
   
-  No projeto incluído o requirements.txt, para facilitar a instalação das dependências
+  Inicia virtualenv
+  
+  ```source diretorio da virtualenv/bin/activate```
+  
+  No projeto esta incluído o requirements.txt, para facilitar a instalação das dependências
   
   ```pip3 install -r requirements.txt```
 
