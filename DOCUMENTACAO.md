@@ -7,7 +7,7 @@ Aplicativo web de lista de tarefas
 * Django 1.9
 * Sqlite
 * AngularJS
-* BootStrap 3
+* Bootstrap 3
 
 2. Instalação (Utilizando virtualenv)
 
