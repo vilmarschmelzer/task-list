@@ -25,7 +25,7 @@ Aplicativo web de lista de tarefas
 
 ###3. Execução
 
-  Vá ao diretorio onde foi clonado o projeto e execute o comando
+  Vá ao diretório onde foi clonado o projeto e execute o comando
   
   ```python manager.py runserver```
 
@@ -59,7 +59,8 @@ Aplicativo web de lista de tarefas
   
   * Buscar tarefa, ID = id da tarefa
     
-    ```curl -X GET http://localhost:porta/get-task/ID/```
+  ```curl -X GET http://localhost:porta/get-task/ID/```
+    
     Caso o id informado não existir, retornara o erro 404 com a mensagem 'Tarefa não encontrada'
 
   * Finalizar tarefa, ID = id da tarefa
