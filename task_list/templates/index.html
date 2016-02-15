@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block js %}
+    <script src="{{ STATIC_URL }}js/angular/task.js" charset="utf-8"></script>
+{% endblock %}
+
+{% block angularapp %} ng-app="task" {% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <h2><b>Lista de tarefas</b></h2>
+
+</div>
+
+<div ng-controller="Task" ng-init="load_tasks()">
+    {% include "modal_task.html"%}
+    {% include "table_task.html"%}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<table class="table table-hover">
+    <thead>
+        <th class="col-xs-1">Editar</th>
+        <th class="col-xs-9">Tarefa</th>
+        <th class="col-xs-1">Status</th>
+        <th class="col-xs-1">Remover</th>
+    </thead>
+    <tbody>
+
+        <tr ng-repeat="task_tr in tasks">
+            <td>
+                <button ng-click="alter(task_tr.id);" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+            </td>
+
+            <td>
+                {[{ task_tr.task }]}
+            </td>
+            <td>
+                <button ng-show="!task_tr.done" class="btn btn-danger" ng-click="done(task_tr.id);">
+                    <b>Finalizar</b>
+                </button>
+                <button ng-show="task_tr.done" class="btn btn-success disabled">Finalizada</button>
+            </td>
+            <td>
+                <button class="btn btn-default" ng-click="delete(task_tr.id);">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>
