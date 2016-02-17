@@ -1,1 +1,1 @@
-__author__ = 'vilmar'
+from .default import DefaultConfig
