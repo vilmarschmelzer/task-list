@@ -9,3 +9,6 @@ class Task(db.Model):
 
     def __init__(self, task=None):
         self.task = task
+
+    def json_dump(self):
+        return dict(id=self.id, task=self.task)
