@@ -35,9 +35,8 @@ requestapp.controller('Task', function Task($scope, $log, $http){
         });
     };
 
-    $scope.done = function(task_id){
-
-        var data = $.param({id: task_id});
+    $scope.done = function(task){
+        task.done=true;
 
         var config = {
             headers : {
@@ -45,7 +44,7 @@ requestapp.controller('Task', function Task($scope, $log, $http){
             }
         }
 
-        $http.get('/done-task/'+task_id+'/')
+        $http.put('/task/'+task.id+'/', task)
         .success(function (data, status, headers, config) {
             $scope.load_tasks();
         })
@@ -56,7 +55,7 @@ requestapp.controller('Task', function Task($scope, $log, $http){
 
     $scope.alter = function(task_id){
 
-        $http.get('/get-task/'+task_id+'/')
+        $http.get('/task/'+task_id+'/')
         .success(function (data, status, headers, config) {
             $scope.task = data;
 
@@ -80,24 +79,38 @@ requestapp.controller('Task', function Task($scope, $log, $http){
         $('#modal_task').modal('show');
     }
     $scope.save = function(){
-
-        var data = $.param($scope.task);
         var config = {
             headers : {
                 'Content-Type': 'application/json'
             }
         }
 
-        $http.post('/task/', $scope.task, config)
-        .success(function (data, status, headers, config) {
-            $scope.task.null;
-            $('#modal_task').modal('hide');
+        if($scope.task.id == null){
 
-            $scope.load_tasks();
+            $http.post('/task/', $scope.task, config)
+            .success(function (data, status, headers, config) {
+                $scope.task.null;
+                $('#modal_task').modal('hide');
 
-        })
-        .error(function (data, status, header, config) {
+                $scope.load_tasks();
 
-        });
+              })
+              .error(function (data, status, header, config) {
+
+            });
+        }
+        else{
+            $http.put('/task/'+$scope.task.id+'/', $scope.task, config)
+            .success(function (data, status, headers, config) {
+                $scope.task.null;
+                $('#modal_task').modal('hide');
+
+                $scope.load_tasks();
+
+              })
+              .error(function (data, status, header, config) {
+
+            });
+        }
     }
 });
