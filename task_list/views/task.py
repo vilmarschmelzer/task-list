@@ -1,7 +1,9 @@
 from flask_restful import Resource, reqparse
-from task_list import db
+from task_list import db, auth, app
 from task_list.models import Task
+from memory_profiler import profile
 import json
+
 
 parser = reqparse.RequestParser()
 parser.add_argument('id', type=int)
@@ -10,6 +12,8 @@ parser.add_argument('done', type=bool)
 
 
 class TaskRestView(Resource):
+
+    decorators = [auth.login_required]
 
     def delete(self, task_id):
         Task.query.filter(Task.id == task_id).delete()
@@ -38,6 +42,7 @@ class TaskRestView(Resource):
 
         return 'Sucesso', 201
 
+    @profile()
     def get(self, task_id=None):
         if task_id is None:
             tasks = Task.query.all()
