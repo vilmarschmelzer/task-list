@@ -42,7 +42,6 @@ class TaskRestView(Resource):
 
         return 'Sucesso', 201
 
-    @profile()
     def get(self, task_id=None):
         if task_id is None:
             tasks = Task.query.all()

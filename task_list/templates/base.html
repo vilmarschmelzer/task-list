@@ -1,37 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<title>Lista de tarefas</title>
-<meta charset="UTF-8">
+    <title>Lista de tarefas</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-	  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-theme.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/task_list.css')}}" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/material.min.css')}}">
+    <script src="{{ url_for('static', filename='js/material.min.js')}}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="{{ url_for('static', filename='js/jquery-2.1.4.min.js')}}" charset="utf-8"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}" charset="utf-8"></script>
+
     <script src="{{ url_for('static', filename='js/angular.min.js')}}" charset="utf-8"></script>
+    <script src="{{ url_for('static', filename='js/dialog-polyfill.js')}}" charset="utf-8"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dialog-polyfill.css')}}" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/task_list.css')}}">
+
     {% block js %}
     {% endblock %}
 
 </head>
 <body {% block angularapp %}{% endblock %}>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Lista de tarefas</span>
 
-	<section class="container">
-        {% block content %}
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Title</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+      {% block content %}
         {% endblock %}
-	</section>
-	<footer>
-        <div class="navbar-inverse navbar-fixed-bottom ">
+      </div>
+    </main>
+  </div>
 
-                <div class="navbar-header">
-                    <p class="navbar-text">Desenvolvido por Vilmar Schmelzer</p>
-
-                </div>
-
-
-
-        </div>
-	</footer>
 </body>
 </html>

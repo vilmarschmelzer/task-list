@@ -1,7 +1,4 @@
-footer {
-    margin-top:40px;
-}
-
-.modal-body {
-    margin:12px;
+.mdl-layout {
+  align-items: center;
+  justify-content: center;
 }

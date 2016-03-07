@@ -1,4 +1,5 @@
 var requestapp = angular.module('task',[]);
+var dialog = document.querySelector('dialog');
 
 requestapp.config(function($interpolateProvider) {
     $interpolateProvider.startSymbol('{[{');
@@ -59,7 +60,7 @@ requestapp.controller('Task', function Task($scope, $log, $http){
         .success(function (data, status, headers, config) {
             $scope.task = data;
 
-            $('#modal_task').modal('show');
+            dialog.showModal();
 
         })
         .error(function (data, status, header, config) {
@@ -76,7 +77,7 @@ requestapp.controller('Task', function Task($scope, $log, $http){
             $scope.task.done=false;
         }
 
-        $('#modal_task').modal('show');
+        dialog.showModal();
     }
     $scope.save = function(){
         var config = {
@@ -90,7 +91,7 @@ requestapp.controller('Task', function Task($scope, $log, $http){
             $http.post('/task/', $scope.task, config)
             .success(function (data, status, headers, config) {
                 $scope.task.null;
-                $('#modal_task').modal('hide');
+                dialog.close();
 
                 $scope.load_tasks();
 
@@ -103,7 +104,7 @@ requestapp.controller('Task', function Task($scope, $log, $http){
             $http.put('/task/'+$scope.task.id+'/', $scope.task, config)
             .success(function (data, status, headers, config) {
                 $scope.task.null;
-                $('#modal_task').modal('hide');
+                dialog.close();
 
                 $scope.load_tasks();
 

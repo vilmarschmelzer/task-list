@@ -8,7 +8,7 @@ Aplicativo web de lista de tarefas
 * REST
 * Sqlite
 * AngularJS
-* Bootstrap 3
+* Material Design Lite
 
 ###2. Instalação (utilizando virtualenv)
 
