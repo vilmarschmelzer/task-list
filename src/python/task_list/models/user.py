@@ -1,5 +1,6 @@
-from task_list import db
 from passlib.apps import custom_app_context as pwd_context
+
+from task_list import db
 
 
 class User(db.Model):

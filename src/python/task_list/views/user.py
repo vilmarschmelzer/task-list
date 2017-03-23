@@ -1,7 +1,9 @@
-from flask_restful import Resource, reqparse
-from task_list import db, auth
-from task_list.models import User
 import json
+
+from flask_restful import Resource, reqparse
+
+from task_list import db
+from task_list.models import User
 
 parser = reqparse.RequestParser()
 parser.add_argument('id', type=int)

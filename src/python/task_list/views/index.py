@@ -1,5 +1,6 @@
-from flask.views import MethodView
 from flask import render_template
+from flask.views import MethodView
+
 from task_list import auth, db
 from task_list.models import User
 

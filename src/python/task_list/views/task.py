@@ -1,9 +1,9 @@
-from flask_restful import Resource, reqparse
-from task_list import db, auth, app
-from task_list.models import Task
-from memory_profiler import profile
 import json
 
+from flask_restful import Resource, reqparse
+
+from task_list import auth, db
+from task_list.models import Task
 
 parser = reqparse.RequestParser()
 parser.add_argument('id', type=int)

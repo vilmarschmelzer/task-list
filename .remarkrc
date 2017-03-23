@@ -1,0 +1,34 @@
+{
+  "plugins": {
+    "lint": {
+      "blockquote-indentation": 2,
+      "checkbox-character-style":{
+        "checked": "X",
+        "unchecked": " "
+      },
+      "code-block-style": "fenced",
+      "emphasis-marker": "*",
+      "fenced-code-marker": "`",
+      "final-definition": false,
+      "heading-increment": false,
+      "heading-style": "atx",
+      "link-title-style": "\"",
+      "list-item-indent": "space",
+      "list-item-spacing": false,
+      "no-duplicate-headings": false,
+      "no-tabs": true,
+      "ordered-list-marker-style": ".",
+      "ordered-list-marker-value": "one",
+      "rule-style": "_______",
+      "strong-marker": "*",
+      "table-cell-padding": "padded",
+      "table-pipe-alignment": true,
+      "table-pipes": true,
+      "unordered-list-marker-style": "*"
+    }
+  },
+  "settings": {
+    "commonmark": true,
+    "bullet": "*"
+  }
+}
